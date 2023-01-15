@@ -71,13 +71,12 @@ body {
   padding: 7px;
   border-radius: 14px;
   margin: 7px 5px;
-  
 }
-#tipA{
+#tipA {
   border: 2px solid rgb(83, 83, 83);
   box-shadow: rgb(34, 34, 34) 0px 0px 8px;
 }
-#tipB{
+#tipB {
   border: 2px solid rgb(83, 83, 83);
   box-shadow: rgb(0, 255, 4) 0px 0px 8px;
 }
@@ -87,6 +86,7 @@ body {
   font-size: 18px;
   text-align: center;
   margin-bottom: 3px;
+  word-break: break-word;
 }
 .cards div:first-child {
   border-right: 2px solid rgba(0, 0, 0, 0.29);
@@ -131,7 +131,6 @@ body {
 }
 .botaoConcluir {
   background-color: rgb(55, 209, 47);
-  
 }
 
 .botaoResetar {
