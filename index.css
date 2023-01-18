@@ -1,15 +1,67 @@
-/*  */
+/* Config Cores Projeto */
+
+:root {
+  /*Body*/
+  --body-color: rgb(255, 255, 255);
+  --body-color2: rgb(166, 255, 249);
+
+  /*Box*/
+  --box-form: rgb(206, 247, 255);
+  --box-form-tarefa: rgb(198, 255, 193);
+
+  --box-primari-color: rgb(206, 214, 253) 10%;
+  --box-second-color: rgb(255, 255, 255) 40%;
+
+  --box-shadow1: black;
+  --box-shadow2: rgb(0, 255, 21);
+
+  --box-border-color: 1px solid rgb(103, 103, 103);
+
+  /*Botoes*/
+  --botoes-positivos: rgb(145, 255, 120);
+  --botoes-negativos: rgb(255, 161, 161);
+  --botoes-neutros: rgb(148, 148, 148);
+
+  --botoes-neon1: rgb(26, 139, 0);
+  --botoes-neon2: rgb(255, 0, 0);
+  --botoes-neon3: rgb(79, 79, 79);
+
+  --bordas-botoes-positivas: 1px solid green;
+  --bordas-botoes-negativas: 1px solid red;
+  --bordas-botoes-neutros: 1px solid rgb(90, 89, 89);
+
+  /*Fontes*/
+  --fonte-icones: rgb(0, 0, 0);
+  --fonte-tarefa: rgb(0, 0, 0);
+  --fonte-estado: rgb(0, 73, 77);
+}
+
+/* 
+
+
+
+
+
+
+
+
+*/
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(
+    to top,
+    var(--body-color),
+    var(--body-color2)
+  );
+  margin: 0px 50px 0px;
+}
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-body {
-  background-color: rgb(158, 204, 248);
-  margin: 0px 50px 0px;
 }
 /*Header*/
 
@@ -22,26 +74,29 @@ body {
 }
 
 #headerTask button {
-  background-color: rgb(55, 209, 47);
+  background-color: var(--botoes-positivos);
   width: 70px;
   height: 25px;
   border-radius: 0px 0px 10px 0px;
   font-weight: bold;
   cursor: pointer;
+  border: var(--bordas-botoes-positivas);
+  color: var(--fonte-icones);
 }
 
 #formulario {
+  color: var(--fonte-icones);
   margin: auto;
   margin-bottom: 20px;
-  background-color: rgb(179, 175, 228);
+  background-color: var(--box-form);
   display: flex;
   justify-content: space-between;
   width: 350px;
   align-items: center;
   padding: 0px 10px;
   border-radius: 0px 0px 14px 14px;
-  border: 2px solid rgb(83, 83, 83);
-  box-shadow: rgb(34, 34, 34) 0px 0px 8px;
+  border: var(--box-border-color);
+  box-shadow: var(--box-shadow1) 0px 0px 8px;
 }
 #novaTarefa {
   height: 36px;
@@ -52,7 +107,7 @@ body {
 }
 
 #novaTarefa:focus {
-  background-color: rgb(208, 255, 255);
+  background-color: var(--box-form-tarefa);
 }
 
 /*cards*/
@@ -65,7 +120,11 @@ body {
 
 .cards {
   display: flex;
-  background-color: rgb(179, 175, 228);
+  background-image: linear-gradient(
+    to left,
+    var(--box-primari-color),
+    var(--box-second-color)
+  );
   width: 350px;
   height: 85px;
   padding: 7px;
@@ -73,12 +132,12 @@ body {
   margin: 7px 5px;
 }
 #tipA {
-  border: 2px solid rgb(83, 83, 83);
-  box-shadow: rgb(34, 34, 34) 0px 0px 8px;
+  border: var(--box-border-color);
+  box-shadow: var(--box-shadow1) 0px 0px 8px;
 }
 #tipB {
-  border: 2px solid rgb(83, 83, 83);
-  box-shadow: rgb(0, 255, 4) 0px 0px 8px;
+  border: var(--box-border-color);
+  box-shadow: var(--box-shadow2) 0px 0px 8px;
 }
 .cards h3:first-child {
   width: 295px;
@@ -87,9 +146,10 @@ body {
   text-align: center;
   margin-bottom: 3px;
   word-break: break-word;
+  color: var(--fonte-tarefa);
 }
 .cards div:first-child {
-  border-right: 2px solid rgba(0, 0, 0, 0.29);
+  border-right: var(--box-border-color);
 }
 
 .cards div:last-child {
@@ -100,42 +160,68 @@ body {
   text-align: center;
   font-weight: bold;
   font-size: 14px;
-  color: rgb(255, 255, 255);
-  border: 1.5px solid rgb(61, 46, 46);
+  color: var(--fonte-estado);
+
   border-radius: 4px;
   width: min-content;
   margin: auto;
   padding: 0px 3px;
 }
+
 .penden {
-  background-color: rgb(247, 73, 73);
+  background-color: var(--botoes-negativos);
+  border: var(--bordas-botoes-negativas);
 }
 .conclu {
-  background-color: rgb(97, 182, 113);
+  background-color: var(--botoes-positivos);
+  border: var(--bordas-botoes-positivas);
 }
-
 .botaoDeletar {
-  background-color: rgb(247, 73, 73);
+  color: var(--fonte-icones);
+  background-color: var(--botoes-negativos);
   width: 30px;
   height: 25px;
   border-radius: 0px 10px 0px 0px;
   font-weight: bold;
+  border: var(--bordas-botoes-negativas);
 }
-
+button {
+  transition: all 0.2s ease-in-out;
+}
 #btnAlter {
+  color: var(--fonte-icones);
   width: 30px;
   height: 25px;
   border-radius: 0px 0px 10px 0px;
   margin-top: 17px;
   font-weight: bold;
+  border: var(--bordas-botoes-neutros);
 }
 .botaoConcluir {
-  background-color: rgb(55, 209, 47);
+  background-color: var(--botoes-positivos);
 }
 
 .botaoResetar {
-  background-color: rgb(147, 148, 147);
+  background-color: var(--botoes-neutros);
 }
+
+button {
+  cursor: pointer;
+}
+/*hovers*/
+#botaoSalvar:hover {
+  box-shadow: 0 0 15px var(--botoes-neon1);
+}
+.botaoConcluir:hover {
+  box-shadow: 0 0 15px var(--botoes-neon1);
+}
+.botaoDeletar:hover {
+  box-shadow: 0 0 15px var(--botoes-neon2);
+}
+.botaoResetar:hover {
+  box-shadow: 0 0 15px var(--botoes-neon3);
+}
+
 /*@medias*/
 
 @media (max-width: 450px) {
