@@ -4,11 +4,7 @@ const containerTask = document.querySelector("#contain");
 
 //Funçao que faz a consulta tipo GET na API
 async function consultaTask() {
-  const retorno = await fetch("https://api-task-1.vercel.app/tasks/listar", {
-    headers: {
-      Authorization: "Bearer " + "r27gayBdcG2tlvnQk7BX86qZ",
-    },
-  });
+  const retorno = await fetch("https://api-task-1.vercel.app/tasks/listar");
   const tarefasRetornadas = await retorno.json();
   preencheInfoNoHtml(tarefasRetornadas);
 }
@@ -73,7 +69,7 @@ function getDadosForm() {
     return;
   }
   const novaTarefa = {
-    tarefa: inputTask.value,
+    value_task: inputTask.value,
   };
   return novaTarefa;
 }
