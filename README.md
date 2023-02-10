@@ -19,7 +19,7 @@
 
 
   <br>
-  <p align="center"> Projeto bem simples hospedado na Vercel, criado apenas para cosumir uma Api de tarefas.  Futuramente sera subistituido por um Front feito em React
+  <p align="center"> Projeto bem simples hospedado na Vercel, criado apenas para cosumir uma Api de tarefas.
   </p>
 
 <br>
