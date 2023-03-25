@@ -4,7 +4,7 @@ const containerTask = document.querySelector("#contain");
 
 //Funçao que faz a consulta tipo GET na API
 async function consultaTask() {
-  const retorno = await fetch("https://api-task-1.vercel.app/tasks/listar");
+  const retorno = await fetch("https://api-tasks-1.vercel.app/tasks/listar");
   const tarefasRetornadas = await retorno.json();
   preencheInfoNoHtml(tarefasRetornadas);
 }
@@ -76,7 +76,7 @@ function getDadosForm() {
 
 async function enviarTarefa(novaTarefa) {
   try {
-    const resposta = await fetch("https://api-task-1.vercel.app/tasks/criar", {
+    const resposta = await fetch("https://api-tasks-1.vercel.app/tasks/criar", {
       method: "POST",
 
       headers: {
@@ -106,7 +106,7 @@ function limparCampos() {
 //________________DELETE________________
 
 async function deletarTask(id) {
-  await fetch(`https://api-task-1.vercel.app/tasks/deletar/${id}`, {
+  await fetch(`https://api-tasks-1.vercel.app/tasks/deletar/${id}`, {
     method: "DELETE",
   });
   window.location.reload(true);
@@ -115,7 +115,7 @@ async function deletarTask(id) {
 //________________MUDAR ESTADO________________
 
 async function atualizaTask(id) {
-  await fetch(`https://api-task-1.vercel.app/tasks/atualizar/${id}`, {
+  await fetch(`https://api-tasks-1.vercel.app/tasks/atualizar/${id}`, {
     method: "PUT",
   });
   window.location.reload(true);
